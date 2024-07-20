@@ -1,21 +1,18 @@
+// path- app/product/page.tsx
 import React from 'react';
-import Link from "next/link"
+import Link from "next/link";
 
 async function getData() {
   const res = await fetch('https://digelectrical-quorum-backend.vercel.app/api/v1/product/all');
-
   if (!res.ok) {
     throw new Error('Failed to fetch data');
   }
-
   return res.json();
 }
-
 type Props = {};
 
 const Page = async (props: Props) => {
   const mydata = await getData();
-
 
   return (
     <div>
